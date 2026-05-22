@@ -49,19 +49,24 @@
   }
 
   /* ── MASTHEAD ── */
-  .masthead { background: var(--charcoal); }
+  .masthead {
+    background: var(--charcoal);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 
   .masthead-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 18px 48px;
+    padding: 16px 48px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
   }
 
-  .masthead-brand { display: flex; align-items: baseline; gap: 16px; }
+  .masthead-brand { display: flex; align-items: baseline; }
 
   .masthead-wordmark {
     font-family: 'Cormorant Garant', serif;
@@ -70,23 +75,6 @@
     letter-spacing: -0.02em;
     color: #EEE4CC;
     line-height: 1;
-  }
-
-  .masthead-pipe {
-    width: 1px;
-    height: 18px;
-    background: rgba(255,255,255,0.12);
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  .masthead-tagline {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.58rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--warm-gray);
   }
 
   .live-pill {
@@ -118,16 +106,7 @@
     background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--gold-light) 50%, var(--gold) 80%, transparent 100%);
   }
 
-  /* ── NAV ── */
-  .nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(250,246,238,0.97);
-    border-bottom: 1px solid var(--rule);
-    backdrop-filter: blur(10px);
-  }
-
+  /* ── NAV (inside header) ── */
   .nav-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -141,17 +120,16 @@
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 16px 20px;
+    padding: 14px 20px;
     cursor: pointer;
-    color: var(--warm-gray);
+    color: rgba(238,228,204,0.45);
     border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
     transition: color 0.2s, border-color 0.2s;
     white-space: nowrap;
   }
 
-  .nav-tab:hover { color: var(--ink); }
-  .nav-tab.active { color: var(--gold-dark); border-bottom-color: var(--gold); }
+  .nav-tab:hover { color: rgba(238,228,204,0.85); }
+  .nav-tab.active { color: #EEE4CC; border-bottom-color: var(--gold); }
 
   /* ── PAGES ── */
   .page-section { display: none; }
@@ -988,9 +966,8 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .masthead-inner { padding: 14px 20px; }
-    .masthead-tagline, .masthead-pipe { display: none; }
-    .nav-inner { padding: 0 12px; overflow-x: auto; }
+    .masthead-inner { padding: 12px 18px 0; }
+    .nav-inner { padding: 0 8px; overflow-x: auto; }
     .nav-tab { padding: 13px 10px; font-size: 0.55rem; }
     .content-wrap { padding: 22px 18px 48px; }
     .spot-hero { padding: 24px 18px 20px; }
@@ -1012,28 +989,20 @@
 <!-- ══ MASTHEAD ══ -->
 <div class="masthead">
   <div class="masthead-inner">
-    <div class="masthead-brand">
-      <span class="masthead-wordmark">KaratClock</span>
-      <div class="masthead-pipe"></div>
-      <span class="masthead-tagline">Live Precious Metals Intelligence</span>
-    </div>
+    <span class="masthead-wordmark">KaratClock</span>
     <div class="live-pill">
       <div class="live-dot"></div>
       Live
     </div>
   </div>
-</div>
-<div class="gold-rule"></div>
-
-<!-- ══ NAV ══ -->
-<nav class="nav-bar">
+  <div class="gold-rule"></div>
   <div class="nav-inner">
     <div class="nav-tab active" data-tab="spot"    onclick="switchTab('spot',this)">Spot Prices</div>
     <div class="nav-tab"        data-tab="compare" onclick="switchTab('compare',this)">Product Comparator</div>
     <div class="nav-tab"        data-tab="global"  onclick="switchTab('global',this)">Global Markets</div>
     <div class="nav-tab"        data-tab="buy"     onclick="switchTab('buy',this)">Where to Buy</div>
   </div>
-</nav>
+</div>
 
 <!-- ══ TAB 1: SPOT PRICES ══ -->
 <div id="tab-spot" class="page-section active">
