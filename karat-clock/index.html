@@ -82,6 +82,22 @@
     line-height: 1;
   }
 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .header-timestamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    color: rgba(238,228,204,0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
   .live-pill {
     display: flex;
     align-items: center;
@@ -139,27 +155,6 @@
   /* ── PAGES ── */
   .page-section { display: none; }
   .page-section.active { display: block; }
-
-  /* ── DATELINE ── */
-  .dateline-strip {
-    background: var(--charcoal);
-    color: var(--warm-gray);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 48px;
-  }
-
-  .dateline-logo {
-    height: 18px;
-    width: auto;
-    opacity: 0.35;
-    filter: brightness(3);
-  }
 
   /* ── SPOT HERO ── */
   .spot-hero {
@@ -977,7 +972,7 @@
     .nav-tab { padding: 13px 10px; font-size: 0.55rem; }
     .content-wrap { padding: 22px 18px 48px; }
     .spot-hero { padding: 24px 18px 20px; }
-    .dateline-strip { padding: 8px 18px; }
+    .header-timestamp { display: none; }
     footer { padding: 26px 18px; }
     .cookie-banner { padding: 13px 18px; }
     .modal-box { margin: 18px; padding: 26px 20px; }
@@ -999,9 +994,12 @@
       <img src="kc_transaparent.png" alt="KaratClock" class="masthead-logo">
       <span class="masthead-wordmark">KaratClock</span>
     </div>
-    <div class="live-pill">
-      <div class="live-dot"></div>
-      Live
+    <div class="header-right">
+      <span id="lastUpdated" class="header-timestamp">Loading...</span>
+      <div class="live-pill">
+        <div class="live-dot"></div>
+        Live
+      </div>
     </div>
   </div>
   <div class="gold-rule"></div>
@@ -1015,11 +1013,6 @@
 
 <!-- ══ TAB 1: SPOT PRICES ══ -->
 <div id="tab-spot" class="page-section active">
-  <div class="dateline-strip">
-    <span id="lastUpdated">Loading market data...</span>
-    <img src="logo_icon.png" alt="KaratClock" class="dateline-logo">
-  </div>
-
   <div class="spot-hero">
     <h1 class="spot-hero-headline">Precious Metals<br><em>Price Tracker</em></h1>
     <p class="spot-hero-sub">Live spot prices for gold, silver, platinum &amp; palladium — updated every 60 seconds</p>
