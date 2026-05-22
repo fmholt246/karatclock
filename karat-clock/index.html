@@ -59,14 +59,19 @@
   .masthead-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 16px 48px 0;
+    padding: 16px 48px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
   }
 
-  .masthead-brand { display: flex; align-items: baseline; }
+  .masthead-brand { display: flex; align-items: center; gap: 10px; }
+
+  .masthead-logo {
+    height: 32px;
+    width: auto;
+  }
 
   .masthead-wordmark {
     font-family: 'Cormorant Garant', serif;
@@ -943,7 +948,7 @@
     text-align: center;
   }
 
-  .footer-logo { height: 22px; width: auto; opacity: 0.3; filter: brightness(3); }
+  .footer-logo { height: 32px; width: auto; opacity: 0.55; }
 
   .footer-links { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; align-items: center; }
 
@@ -966,7 +971,8 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .masthead-inner { padding: 12px 18px 0; }
+    .masthead-inner { padding: 12px 18px 12px; }
+    .masthead-logo { height: 26px; }
     .nav-inner { padding: 0 8px; overflow-x: auto; }
     .nav-tab { padding: 13px 10px; font-size: 0.55rem; }
     .content-wrap { padding: 22px 18px 48px; }
@@ -989,7 +995,10 @@
 <!-- ══ MASTHEAD ══ -->
 <div class="masthead">
   <div class="masthead-inner">
-    <span class="masthead-wordmark">KaratClock</span>
+    <div class="masthead-brand">
+      <img src="kc_transaparent.png" alt="KaratClock" class="masthead-logo">
+      <span class="masthead-wordmark">KaratClock</span>
+    </div>
     <div class="live-pill">
       <div class="live-dot"></div>
       Live
@@ -1337,7 +1346,7 @@
 
 <footer>
   <div class="footer-inner">
-    <img src="logo_icon.png" alt="KaratClock" class="footer-logo">
+    <img src="kc_transaparent.png" alt="KaratClock" class="footer-logo">
     <div class="footer-links">
       <button class="footer-link" onclick="openModal('about')">About KaratClock</button>
       <span class="footer-sep">·</span>
