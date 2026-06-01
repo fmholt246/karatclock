@@ -925,6 +925,197 @@
     .masthead-wordmark { font-size: 1.4rem; }
     .masthead-logo { height: 38px; }
   }
+
+  /* ── LEARN / BLOG ── */
+  .learn-hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 48px 32px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .article-card {
+    background: var(--linen);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background 0.2s;
+    animation: cardReveal 0.4s ease both;
+    cursor: pointer;
+  }
+
+  .article-card:hover { background: var(--parchment); }
+
+  .article-card-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  }
+
+  .article-card-body { padding: 28px 26px 22px; display: flex; flex-direction: column; flex: 1; gap: 14px; }
+
+  .article-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-bg);
+    border: 1px solid rgba(168,120,40,0.2);
+    padding: 3px 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+  }
+
+  .article-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .article-excerpt {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.8;
+    flex: 1;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .article-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54rem;
+    color: var(--faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .article-read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(168,120,40,0.35);
+    padding: 6px 12px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .article-read-btn:hover { background: var(--gold); color: var(--linen); border-color: var(--gold); }
+
+  /* Article modal content */
+  .article-modal-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .article-modal-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54rem;
+    color: var(--faint);
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .article-body { font-size: 0.84rem; color: var(--text); line-height: 1.9; }
+  .article-body h3 { font-family: 'Cormorant Garant', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin: 24px 0 8px; letter-spacing: -0.01em; }
+  .article-body p { margin-bottom: 14px; }
+  .article-body ul { padding-left: 18px; margin-bottom: 14px; }
+  .article-body li { margin-bottom: 6px; }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(168,120,40,0.3); }
+  .article-body a:hover { border-color: var(--gold); }
+
+  .article-callout {
+    background: var(--gold-bg);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .article-affiliate-strip {
+    background: var(--linen);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .affiliate-strip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .aff-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.68rem;
+    padding: 8px 14px;
+    text-decoration: none;
+    border: none;
+    transition: opacity 0.15s;
+  }
+
+  .aff-btn:hover { opacity: 0.82; }
+  .aff-btn-jm    { background: #1A6FD4; color: #fff; }
+  .aff-btn-apmex { background: #C05A10; color: #fff; }
+  .aff-btn-kitco { background: #5030B0; color: #fff; }
+
+  @media (max-width: 768px) {
+    .learn-hero { padding: 28px 18px 20px; }
+    .learn-grid { grid-template-columns: 1fr; }
+    .article-card-body { padding: 20px 16px 16px; }
+  }
 </style>
 </head>
 <body>
@@ -950,6 +1141,7 @@
     <div class="nav-tab"        data-tab="compare" onclick="switchTab('compare',this)">Product Comparator</div>
     <div class="nav-tab"        data-tab="global"  onclick="switchTab('global',this)">Global Markets</div>
     <div class="nav-tab"        data-tab="buy"     onclick="switchTab('buy',this)">Where to Buy</div>
+    <div class="nav-tab"        data-tab="learn"   onclick="switchTab('learn',this)">Learn</div>
   </div>
 </div>
 
@@ -1174,6 +1366,290 @@
         </div>
       </a>
 
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAB 5: LEARN ══ -->
+<div id="tab-learn" class="page-section">
+  <div class="learn-hero">
+    <h1 class="spot-hero-headline">Precious Metals<br><em>Learning Center</em></h1>
+    <p class="spot-hero-sub">Expert guides to help you buy smarter — from understanding premiums to choosing the right coin</p>
+  </div>
+
+  <div class="content-wrap" style="padding-top:32px">
+    <div class="section-head">
+      <span class="section-head-title">Latest Articles</span>
+      <div class="section-head-rule"></div>
+    </div>
+
+    <div class="learn-grid">
+
+      <div class="article-card" style="animation-delay:0s" onclick="openModal('article-premium')">
+        <div class="article-card-accent"></div>
+        <div class="article-card-body">
+          <span class="article-category"><i data-lucide="graduation-cap" style="width:10px;height:10px"></i> Education</span>
+          <div class="article-title">What is a Premium Over Spot and Why Does it Matter?</div>
+          <div class="article-excerpt">Spot price is just the starting point. The actual price you pay for a gold coin or silver bar is almost always higher — sometimes by a little, sometimes by a lot. Understanding the premium over spot is the single most important skill for getting value from every purchase.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>5 min read</span>
+              <span>·</span>
+              <span>May 2026</span>
+            </div>
+            <button class="article-read-btn">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card" style="animation-delay:0.06s" onclick="openModal('article-goldvsilver')">
+        <div class="article-card-accent" style="background:linear-gradient(90deg,#9CA8B4,#DDE4EC)"></div>
+        <div class="article-card-body">
+          <span class="article-category" style="color:var(--muted);background:rgba(136,122,100,0.08);border-color:var(--border)"><i data-lucide="bar-chart-2" style="width:10px;height:10px"></i> Market Outlook</span>
+          <div class="article-title">Gold vs Silver in 2026 — Which is the Better Buy?</div>
+          <div class="article-excerpt">With gold trading near all-time highs and the gold-to-silver ratio historically stretched, investors are asking a pivotal question: should you stay in gold or rotate into silver for better upside? We break down the case for each metal right now.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>7 min read</span>
+              <span>·</span>
+              <span>June 2026</span>
+            </div>
+            <button class="article-read-btn" style="color:var(--muted);border-color:var(--border)">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card" style="animation-delay:0.12s" onclick="openModal('article-eaglevmaple')">
+        <div class="article-card-accent" style="background:linear-gradient(90deg,#1C3860,#4A6898)"></div>
+        <div class="article-card-body">
+          <span class="article-category" style="color:var(--blue);background:rgba(28,56,96,0.06);border-color:rgba(28,56,96,0.15)"><i data-lucide="scale" style="width:10px;height:10px"></i> Buyer's Guide</span>
+          <div class="article-title">American Gold Eagle vs Canadian Maple Leaf — Which Should You Buy?</div>
+          <div class="article-excerpt">These two coins dominate the global gold market. The Eagle has American heritage and near-indestructible durability. The Maple Leaf offers higher purity at a lower premium. If you're buying your first — or fiftieth — ounce, here's how to decide.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>6 min read</span>
+              <span>·</span>
+              <span>June 2026</span>
+            </div>
+            <button class="article-read-btn" style="color:var(--blue);border-color:rgba(28,56,96,0.3)">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 1: PREMIUM OVER SPOT ══ -->
+<div class="modal-overlay" id="modal-article-premium">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-premium')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="graduation-cap" style="width:10px;height:10px;vertical-align:middle"></i> Education</div>
+    <div class="modal-title">What is a Premium Over Spot and Why Does it Matter?</div>
+    <div class="article-modal-meta">
+      <span>5 min read</span>
+      <span>·</span>
+      <span>May 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>Walk into any precious metals retailer and you'll notice something immediately: the price of a gold coin is never the same as the gold spot price. If gold is trading at $3,200 per troy ounce, an American Gold Eagle might cost $3,340. That $140 gap is called the <strong>premium over spot</strong> — and understanding it is the difference between paying a fair price and overpaying.</p>
+
+      <h3>What Exactly Is Spot Price?</h3>
+      <p>The spot price is the theoretical price of one troy ounce of pure metal for immediate delivery, set by global futures markets like COMEX in New York. It's the number you see on financial websites and what KaratClock tracks in real time. Think of it as the raw material price — the metal itself, stripped of everything else.</p>
+
+      <h3>Why Do Premiums Exist?</h3>
+      <p>When you buy a physical coin or bar, you're not just buying raw metal. You're paying for:</p>
+      <ul>
+        <li><strong>Minting and fabrication</strong> — converting raw metal into a precisely-weighted, stamped product</li>
+        <li><strong>Distribution and logistics</strong> — secure storage, insurance, and shipping</li>
+        <li><strong>Dealer margin</strong> — the retailer's profit for sourcing and selling the product</li>
+        <li><strong>Brand and collectability</strong> — coins from government mints (like the US Mint) carry a higher premium than generic bars</li>
+        <li><strong>Supply and demand</strong> — during periods of high retail demand, premiums spike dramatically</li>
+      </ul>
+
+      <h3>How to Calculate a Premium</h3>
+      <p>The formula is straightforward:</p>
+      <div class="article-callout">
+        <strong>Premium % = ((Retail Price − Spot Value) ÷ Spot Value) × 100</strong><br><br>
+        Example: Gold spot at $3,200. You buy a 1 oz American Gold Eagle for $3,312.<br>
+        Premium = (($3,312 − $3,200) ÷ $3,200) × 100 = <strong>3.5%</strong>
+      </div>
+      <p>A 3.5% premium on gold is considered reasonable for a government-minted coin. Anything under 5% for a 1 oz gold coin is generally good value at normal market conditions.</p>
+
+      <h3>How Premiums Vary by Product</h3>
+      <p>Not all products carry the same premium. Here's a rough hierarchy from lowest to highest:</p>
+      <ul>
+        <li><strong>10 oz gold bars</strong> — typically 1–2% over spot (lowest per-ounce cost)</li>
+        <li><strong>1 oz generic gold bars</strong> — 2.5–3.5% over spot</li>
+        <li><strong>1 oz government gold coins</strong> (Eagles, Maple Leafs, Krugerrands) — 3–5% over spot</li>
+        <li><strong>1/4 oz and 1/10 oz coins</strong> — 6–10% over spot (smaller sizes always cost more per ounce)</li>
+        <li><strong>1g gold bars</strong> — can exceed 15% over spot</li>
+        <li><strong>Silver coins (1 oz)</strong> — often 15–25% over spot, and can spike to 30%+ during shortages</li>
+      </ul>
+
+      <h3>Why Silver Premiums Are So High</h3>
+      <p>Silver's high premiums surprise many new buyers. Because silver is far cheaper per ounce than gold, the fixed costs of minting and distribution represent a much larger percentage of the coin's value. A $0.50 minting cost on a $3,200 gold coin is negligible. On a $33 silver coin, it's significant.</p>
+
+      <h3>Shopping the Best Premium</h3>
+      <p>The same coin can trade at different premiums across retailers on the same day. Shopping around — or using KaratClock's Product Comparator — can save you real money, especially on larger purchases. Across JM Bullion, APMEX, and Kitco, premium differences of 0.5–2% on a $3,200 gold coin translate to $16–$64 per ounce.</p>
+
+      <div class="article-callout">
+        <strong>Pro tip:</strong> Premiums tend to compress when you buy larger quantities. Buying a 10-coin roll or a 10 oz bar will almost always deliver a lower per-ounce cost than buying single 1 oz pieces.
+      </div>
+
+      <h3>The Takeaway</h3>
+      <p>Spot price tells you what the metal is worth. The premium tells you what the product costs to hold in your hand. Both numbers matter. A great metal at a terrible premium is still a bad deal — and vice versa. Always look at the total all-in cost before you buy.</p>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Compare premiums and buy now →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
+        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> APMEX</a>
+        <a class="aff-btn aff-btn-kitco" href="https://shop.kitco.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Kitco</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 2: GOLD VS SILVER 2026 ══ -->
+<div class="modal-overlay" id="modal-article-goldvsilver">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-goldvsilver')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="bar-chart-2" style="width:10px;height:10px;vertical-align:middle"></i> Market Outlook</div>
+    <div class="modal-title">Gold vs Silver in 2026 — Which is the Better Buy?</div>
+    <div class="article-modal-meta">
+      <span>7 min read</span>
+      <span>·</span>
+      <span>June 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>It's mid-2026, gold has been flirting with all-time highs, and a new generation of retail investors is asking the same question that's been debated in every metals forum for the past century: <strong>gold or silver?</strong></p>
+      <p>The answer isn't simple — and anyone who gives you a one-word reply isn't giving you enough credit. The right metal depends on your goals, your timeline, and how much volatility you can stomach. Here's the honest breakdown.</p>
+
+      <h3>The Gold-to-Silver Ratio: The Most Important Number You Might Be Ignoring</h3>
+      <p>The gold-to-silver ratio tells you how many ounces of silver it takes to buy one ounce of gold. Historically, this ratio has averaged around 60:1 over the past century. The long-term geological average is closer to 15:1 — roughly mirroring the relative abundance of each metal in the Earth's crust.</p>
+      <p>As of mid-2026, the ratio sits around 88:1. This means silver is historically cheap relative to gold. Every major compression of this ratio in history — and there have been several — has involved silver outperforming gold significantly.</p>
+
+      <div class="article-callout">
+        A ratio above 80 has historically been a strong signal that silver is undervalued relative to gold. That doesn't mean silver will correct immediately — but it does create a compelling long-term setup for investors who are patient.
+      </div>
+
+      <h3>The Case for Gold in 2026</h3>
+      <p>Gold's bull case is well-established and genuinely compelling right now:</p>
+      <ul>
+        <li><strong>Central bank buying</strong> — Global central banks, particularly in China, Russia, India, and Eastern Europe, have been accumulating gold at a record pace since 2022. This is structural, long-term demand that doesn't disappear overnight.</li>
+        <li><strong>De-dollarization</strong> — As geopolitical tensions drive countries to diversify reserve assets away from US Treasuries, gold is the obvious beneficiary. There is no other asset that is simultaneously liquid, stateless, and universally accepted.</li>
+        <li><strong>Store of value credentials</strong> — In a world of persistent inflation, fiscal deficits, and currency debasement fears, gold's 5,000-year track record as a store of value still resonates.</li>
+        <li><strong>Liquidity and stability</strong> — Gold's premium market (coins, bars from top mints) is extremely deep. You can buy and sell a $3,200 gold coin far more efficiently than an equivalent silver holding.</li>
+      </ul>
+      <p>Gold doesn't promise explosive returns. It promises preservation. If your goal is to protect wealth across decades, gold remains one of the cleanest ways to do it.</p>
+
+      <h3>The Case for Silver in 2026</h3>
+      <p>Silver's story is more complex — and potentially more exciting:</p>
+      <ul>
+        <li><strong>Industrial demand is accelerating</strong> — Silver is not just a monetary metal. It is an industrial one, used in solar panels, electric vehicles, semiconductors, 5G infrastructure, and medical devices. Global solar capacity installations continue to surge, and each panel requires meaningful quantities of silver.</li>
+        <li><strong>Supply is structurally constrained</strong> — Unlike gold, approximately 60% of silver mined each year is consumed industrially and is effectively gone. Primary silver mines are relatively few; most silver is produced as a by-product of copper and zinc mining. Supply response to rising prices is slow.</li>
+        <li><strong>Lower barrier to entry</strong> — At roughly $35–40/oz, silver lets investors accumulate meaningful physical holdings on a modest budget. A hundred dollars buys real, tangible metal — not a rounding error in a gold purchase.</li>
+        <li><strong>Higher volatility = higher potential upside</strong> — Silver has historically outperformed gold in bull markets, sometimes dramatically. In the 2010–2011 bull run, silver nearly tripled in 12 months while gold doubled. That volatility cuts both ways, but for growth-oriented investors, it matters.</li>
+      </ul>
+
+      <h3>The Practical Realities</h3>
+      <p>Silver's one significant drawback is physical bulk. A $10,000 investment in silver at $36/oz means approximately 278 ounces — nearly 19 pounds of metal. Storage, insurance, and resale logistics become non-trivial at scale. Gold concentrates the same value into just over 3 ounces.</p>
+      <p>Silver also carries higher premiums over spot (see our guide on premiums), meaning your entry cost relative to spot is materially higher than gold. Factor this into any comparison of real returns.</p>
+
+      <h3>Our Take for 2026</h3>
+      <p>For most investors building a physical metals position, a blend makes more sense than a binary choice. A common framework:</p>
+      <ul>
+        <li>Hold <strong>60–70% in gold</strong> for stability, wealth preservation, and liquidity</li>
+        <li>Hold <strong>30–40% in silver</strong> for industrial-demand upside and the compressed ratio opportunity</li>
+      </ul>
+      <p>If your budget is limited, start with silver — the lower entry price lets you build a real position faster. If capital preservation in a volatile macro environment is your primary goal, lean toward gold.</p>
+      <p>Neither metal pays dividends. Neither has counterparty risk. Both are real, tangible stores of value in a world where paper promises are increasingly questioned.</p>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Buy gold &amp; silver now →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold at JM Bullion</a>
+        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/silver?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Silver at APMEX</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 3: EAGLE VS MAPLE LEAF ══ -->
+<div class="modal-overlay" id="modal-article-eaglevmaple">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-eaglevmaple')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="scale" style="width:10px;height:10px;vertical-align:middle"></i> Buyer's Guide</div>
+    <div class="modal-title">American Gold Eagle vs Canadian Maple Leaf — Which Should You Buy?</div>
+    <div class="article-modal-meta">
+      <span>6 min read</span>
+      <span>·</span>
+      <span>June 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>If you're buying your first gold coin — or your fifty-first — you've almost certainly ended up choosing between two: the <strong>American Gold Eagle</strong> and the <strong>Canadian Gold Maple Leaf</strong>. Together they account for the majority of gold coin sales in North America. Both are government-minted, universally recognised, and deeply liquid. But they are meaningfully different products, and which one is right for you comes down to what you care about most.</p>
+
+      <h3>The American Gold Eagle</h3>
+      <p>First minted in 1986 by the United States Mint, the American Gold Eagle is the official gold bullion coin of the United States. It's produced in four sizes: 1/10 oz, 1/4 oz, 1/2 oz, and 1 oz.</p>
+      <p>The Eagle is <strong>22-karat gold</strong>, meaning it is 91.67% pure gold, with the remaining alloy being silver and copper. Crucially, this doesn't mean you're getting less gold — each coin still contains exactly the stated amount of pure gold. The alloy exists by design: it makes the coin harder, more scratch-resistant, and more durable in circulation and handling.</p>
+      <p>Key facts about the American Gold Eagle:</p>
+      <ul>
+        <li><strong>Purity:</strong> .9167 fine gold (22-karat)</li>
+        <li><strong>Issued by:</strong> United States Mint (West Point)</li>
+        <li><strong>Legal tender:</strong> Yes — face values of $5, $10, $25, and $50 USD (nominal only)</li>
+        <li><strong>Design:</strong> Lady Liberty obverse (Augustus Saint-Gaudens), bald eagle reverse</li>
+        <li><strong>IRA eligible:</strong> Yes, under IRS rules</li>
+        <li><strong>Typical premium (1 oz):</strong> 3.5–5% over spot</li>
+      </ul>
+
+      <div class="article-callout">
+        The American Gold Eagle's hardness is often cited as a practical advantage for long-term physical storage. The alloyed composition resists surface damage better than softer, purer coins — an important consideration if you plan to handle or inspect your coins regularly.
+      </div>
+
+      <h3>The Canadian Gold Maple Leaf</h3>
+      <p>Introduced in 1979 by the Royal Canadian Mint, the Gold Maple Leaf quickly became the world's first .9999 fine gold coin available to the public. It remains one of the most widely recognised bullion coins globally, particularly in Europe and Asia.</p>
+      <p>The Maple Leaf is <strong>24-karat gold</strong> at .9999 fineness — 99.99% pure gold, with some years striking special "five nines" (.99999) coins. This purity is both its primary selling point and its one practical limitation: pure gold is softer, meaning Maple Leaf coins show fingerprints and edge marks more readily than the Eagle.</p>
+      <p>Key facts about the Canadian Gold Maple Leaf:</p>
+      <ul>
+        <li><strong>Purity:</strong> .9999 fine gold (24-karat)</li>
+        <li><strong>Issued by:</strong> Royal Canadian Mint</li>
+        <li><strong>Legal tender:</strong> Yes — C$50 face value (nominal only)</li>
+        <li><strong>Design:</strong> Queen Elizabeth II obverse (updated to King Charles III from 2024), maple leaf reverse</li>
+        <li><strong>IRA eligible:</strong> Yes, under IRS rules</li>
+        <li><strong>Typical premium (1 oz):</strong> 3–4.5% over spot</li>
+      </ul>
+
+      <h3>Head-to-Head Comparison</h3>
+      <p>On the metrics that most buyers care about, here's how they stack up:</p>
+      <ul>
+        <li><strong>Purity:</strong> Maple Leaf wins cleanly (.9999 vs .9167). For industrial users and purity-focused collectors, this matters. For most investors, it's academic since both coins contain exactly the amount of gold stated.</li>
+        <li><strong>Premium over spot:</strong> The Maple Leaf typically carries a slightly lower premium, making it marginally more cost-effective to accumulate in volume.</li>
+        <li><strong>Durability:</strong> The Eagle's alloyed composition gives it a meaningful practical edge for handling. Maple Leafs scratch more easily and show fingerprints on the mirrored surfaces.</li>
+        <li><strong>Liquidity:</strong> Both are among the most liquid gold coins in the world. You will have no difficulty selling either coin at any reputable dealer globally.</li>
+        <li><strong>Counterfeiting:</strong> Both coins have advanced security features. The Maple Leaf added laser-engraved micro-security in 2013 (a radial lines pattern), and both are widely verifiable by dealers.</li>
+        <li><strong>Collector premium:</strong> First-year Eagles (1986) and specific Maple Leaf anniversary editions carry modest collector premiums, but for standard bullion coins the difference is minimal.</li>
+      </ul>
+
+      <h3>Which Should You Buy?</h3>
+      <p>The honest answer is that <strong>both coins are excellent</strong> — and you won't go wrong with either. But here's a practical framework for choosing:</p>
+      <ul>
+        <li><strong>Buy the American Gold Eagle if:</strong> You're in the US, plan to hold long-term in a physical stack, and want maximum durability. The Eagle is also the more culturally resonant choice for American collectors and may command a slight premium on resale in domestic markets.</li>
+        <li><strong>Buy the Canadian Gold Maple Leaf if:</strong> You prioritise purity, want to minimise your premium cost over the long run, or are building a collection you plan to sell into international markets where the Maple Leaf is extremely well-known.</li>
+        <li><strong>Buy both if:</strong> You're building a meaningful position. Diversifying across mint sources is entirely reasonable, and owning both coins gives you flexibility when selling into different markets.</li>
+      </ul>
+
+      <p>Whatever you decide, comparing prices across retailers before you buy is always worth doing. On a $3,300 gold coin, a 1% premium difference is $33 per ounce — across a 10-coin position, that's $330 that stays in your pocket.</p>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Shop Eagles &amp; Maple Leafs →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/gold-coins/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at JM Bullion</a>
+        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/gold-coins?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at APMEX</a>
+      </div>
     </div>
   </div>
 </div>
@@ -1572,6 +2048,7 @@ function switchTab(name, el){
   el.classList.add('active');
   if(name==='compare') renderCompare();
   if(name==='global')  renderGlobal();
+  lucide.createIcons();
 }
 
 async function render(){
