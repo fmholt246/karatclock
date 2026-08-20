@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Netlify CLI state and local build cache
+.netlify/
+
+# local backups
+*.bak
