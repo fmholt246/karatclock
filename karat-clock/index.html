@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KaratClock — Live Precious Metals Intelligence</title>
-<link rel="icon" type="image/png" href="logo_favicon.png?v=2">
-<link rel="apple-touch-icon" href="logo_favicon.png?v=2">
+<link rel="icon" href="favicon.ico?v=4" sizes="any">
+<link rel="icon" type="image/png" href="logo_favicon.png?v=4">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
+<meta name="theme-color" content="#00926E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -696,9 +698,9 @@
   .retailer-name { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--muted); }
 
   .retailer-dot { width: 5px; height: 5px; border-radius: 50%; }
-  .dot-jm    { background: #2A6FD4; }
-  .dot-apmex { background: #C05A10; }
-  .dot-sd { background: #2E7D32; }
+  .dot-jm    { background: #3D5A80; }
+  .dot-apmex { background: #8F5E3C; }
+  .dot-sd    { background: #3F6B54; }
 
   .retailer-price-group { display: flex; align-items: center; gap: 5px; }
 
@@ -733,23 +735,44 @@
     flex: 1;
     min-width: 70px;
     text-align: center;
-    padding: 7px 8px;
+    padding: 8px;
     font-family: 'Archivo', sans-serif;
     font-size: 0.66rem;
     font-weight: 600;
     text-decoration: none;
-    transition: opacity 0.15s;
+    background: var(--linen);
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: border-color 0.16s, color 0.16s, background 0.16s;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 6px;
   }
 
-  .buy-btn:hover { opacity: 0.82; }
+  /* retailer identity survives as a dot rather than a full-bleed brand colour */
+  .buy-btn::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--rc, var(--muted));
+    flex-shrink: 0;
+  }
+
+  .buy-btn:hover { border-color: var(--ink); color: var(--ink); }
   .buy-btn .lucide { width: 10px; height: 10px; }
-  .btn-jm    { background: #1A6FD4; color: #fff; }
-  .btn-apmex { background: #C05A10; color: #fff; }
-  .btn-sd { background: linear-gradient(135deg, #1B5E20, #43A047); color: #fff; }
+  .btn-jm    { --rc: #3D5A80; }
+  .btn-apmex { --rc: #8F5E3C; }
+  .btn-sd    { --rc: #3F6B54; }
+
+  /* MINT — the only filled button on the card is the cheapest retailer */
+  .buy-btn.is-best {
+    border-color: var(--mint-deep);
+    color: var(--mint-deep);
+    background: var(--mint-wash);
+  }
+
+  .buy-btn.is-best::before { background: var(--mint-deep); }
+  .buy-btn.is-best:hover { background: rgba(0,192,139,0.16); border-color: var(--mint-deep); color: var(--mint-deep); }
 
   .no-results {
     text-align: center;
@@ -1262,20 +1285,29 @@
   .aff-btn {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
     font-size: 0.68rem;
     padding: 8px 14px;
     text-decoration: none;
-    border: none;
-    transition: opacity 0.15s;
+    background: var(--linen);
+    border: 1px solid var(--border);
+    color: var(--text);
+    transition: border-color 0.16s, color 0.16s;
   }
 
-  .aff-btn:hover { opacity: 0.82; }
-  .aff-btn-jm    { background: #1A6FD4; color: #fff; }
-  .aff-btn-apmex { background: #C05A10; color: #fff; }
-  .aff-btn-sd { background: linear-gradient(135deg, #1B5E20, #43A047); color: #fff; }
+  .aff-btn::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--rc, var(--muted));
+    flex-shrink: 0;
+  }
+
+  .aff-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .aff-btn-jm    { --rc: #3D5A80; }
+  .aff-btn-apmex { --rc: #8F5E3C; }
+  .aff-btn-sd    { --rc: #3F6B54; }
 
   @media (max-width: 768px) {
     .learn-hero { padding: 44px 18px 32px; }
@@ -1290,7 +1322,7 @@
 <div class="masthead">
   <div class="masthead-inner">
     <div class="masthead-brand">
-      <img src="kc_transaparent.png?v=2" alt="KaratClock" class="masthead-logo">
+      <img src="kc_transaparent.png?v=4" alt="KaratClock" class="masthead-logo">
       <span class="masthead-wordmark">KaratClock</span>
     </div>
     <div class="header-right">
@@ -1919,7 +1951,7 @@
 
 <footer>
   <div class="footer-inner">
-    <img src="kc_transaparent.png?v=2" alt="KaratClock" class="footer-logo">
+    <img src="kc_transaparent.png?v=4" alt="KaratClock" class="footer-logo">
     <div class="footer-links">
       <button class="footer-link" onclick="openModal('about')">About KaratClock</button>
       <span class="footer-sep">·</span>
@@ -2105,7 +2137,7 @@ function renderCompare(){
       const directUrl = prod.urls?.[wk]?.[r.id];
       const url = directUrl || r.base.replace('{Q}', encodeURIComponent(prod.name+' '+wl));
       const best = Math.abs(price-minP)<0.01;
-      return `<a class="buy-btn ${r.btn}" href="${url}" target="_blank" rel="noopener">${best?'★ ':''}${r.label}</a>`;
+      return `<a class="buy-btn ${r.btn}${best?' is-best':''}" href="${url}" target="_blank" rel="noopener">${best?'★ ':''}${r.label}</a>`;
     }).join('');
 
     return `<div class="product-card" style="animation-delay:${idx*0.025}s">
@@ -2187,11 +2219,11 @@ function updateTs(){
 }
 
 const GLOBAL_COUNTRIES = [
-  { id:'usa',   name:'United States', flag:'🇺🇸', exchange:'COMEX · New York', topBorder:'#2A6FD4',
+  { id:'usa',   name:'United States', flag:'🇺🇸', exchange:'COMEX · New York', topBorder:'#3D5A80',
     premiums:{ gold:0, silver:0, platinum:0, palladium:0 } },
-  { id:'china', name:'China',         flag:'🇨🇳', exchange:'SGE · Shanghai',   topBorder:'#C43030',
+  { id:'china', name:'China',         flag:'🇨🇳', exchange:'SGE · Shanghai',   topBorder:'#8F4444',
     premiums:{ gold:0.65, silver:2.8, platinum:2.1, palladium:1.9 } },
-  { id:'india', name:'India',         flag:'🇮🇳', exchange:'MCX · Mumbai',     topBorder:'#C47830',
+  { id:'india', name:'India',         flag:'🇮🇳', exchange:'MCX · Mumbai',     topBorder:'#96733C',
     premiums:{ gold:19.2, silver:18.5, platinum:17.8, palladium:16.4 } }
 ];
 
