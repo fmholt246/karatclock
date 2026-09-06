@@ -212,6 +212,19 @@
     padding: 84px 48px 56px;
   }
 
+  @media (min-width: 1025px) {
+    .spot-hero {
+      background-image:
+        linear-gradient(to right, var(--parchment) 0%, var(--parchment) 38%, rgba(237,241,244,0.88) 52%, rgba(237,241,244,0.4) 68%, rgba(237,241,244,0) 86%),
+        url('hero_bg.jpg');
+      background-size: cover, cover;
+      background-position: center, center right;
+      background-repeat: no-repeat, no-repeat;
+    }
+
+    .spot-hero .hero-meta { max-width: 46ch; }
+  }
+
   .hero-eyebrow {
     display: flex; align-items: center;
     font-family: 'DM Mono', monospace;
@@ -1744,6 +1757,57 @@
         </div>
       </div>
 
+      <div class="article-card" style="animation-delay:0.18s" onclick="openModal('article-platpall')">
+        <div class="article-card-accent" style="background:linear-gradient(90deg,#5C6670,#C4CBD1)"></div>
+        <div class="article-card-body">
+          <span class="article-category" style="color:var(--muted);background:rgba(136,122,100,0.08);border-color:var(--border)"><i data-lucide="bar-chart-2" style="width:10px;height:10px"></i> Market Outlook</span>
+          <div class="article-title">Platinum and Palladium in 2026 — The Auto Metals Everyone's Ignoring</div>
+          <div class="article-excerpt">While gold and silver grab the headlines, platinum has quietly outpaced both this year and palladium is stabilizing after a brutal three-year slide. Here's what's driving the PGM group and whether either belongs in your stack.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>6 min read</span>
+              <span>·</span>
+              <span>August 2026</span>
+            </div>
+            <button class="article-read-btn" style="color:var(--muted);border-color:var(--border)">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card" style="animation-delay:0.24s" onclick="openModal('article-storage')">
+        <div class="article-card-accent"></div>
+        <div class="article-card-body">
+          <span class="article-category"><i data-lucide="graduation-cap" style="width:10px;height:10px"></i> Education</span>
+          <div class="article-title">How to Store and Insure Your Physical Gold and Silver</div>
+          <div class="article-excerpt">Buying the metal is the easy part. Home safes, bank safe deposit boxes, and third-party depositories all carry different tradeoffs in cost, access, and insurance coverage. Here's how to actually protect what you own.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>7 min read</span>
+              <span>·</span>
+              <span>August 2026</span>
+            </div>
+            <button class="article-read-btn">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card" style="animation-delay:0.3s" onclick="openModal('article-barsize')">
+        <div class="article-card-accent" style="background:linear-gradient(90deg,#1C3860,#4A6898)"></div>
+        <div class="article-card-body">
+          <span class="article-category" style="color:var(--blue);background:rgba(28,56,96,0.06);border-color:rgba(28,56,96,0.15)"><i data-lucide="scale" style="width:10px;height:10px"></i> Buyer's Guide</span>
+          <div class="article-title">1 oz vs 10 oz Gold Bars — Which Size Actually Saves You Money?</div>
+          <div class="article-excerpt">Bigger bars carry lower premiums per ounce, but they come with real tradeoffs in liquidity and resale flexibility. We run the numbers on what you actually save — and when a smaller bar is still the smarter buy.</div>
+          <div class="article-meta">
+            <div class="article-meta-left">
+              <span>5 min read</span>
+              <span>·</span>
+              <span>September 2026</span>
+            </div>
+            <button class="article-read-btn" style="color:var(--blue);border-color:rgba(28,56,96,0.3)">Read <i data-lucide="arrow-right" style="width:10px;height:10px"></i></button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1957,6 +2021,183 @@
         <div class="affiliate-strip-label">Shop Eagles &amp; Maple Leafs →</div>
         <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/gold-coins/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at JM Bullion</a>
         <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/gold-coins?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at APMEX</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 4: PLATINUM & PALLADIUM 2026 ══ -->
+<div class="modal-overlay" id="modal-article-platpall">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-platpall')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="bar-chart-2" style="width:10px;height:10px;vertical-align:middle"></i> Market Outlook</div>
+    <div class="modal-title">Platinum and Palladium in 2026 — The Auto Metals Everyone's Ignoring</div>
+    <div class="article-modal-meta">
+      <span>6 min read</span>
+      <span>·</span>
+      <span>August 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>Gold and silver dominate the conversation, but 2026 has quietly been a strong year for the platinum group metals. Platinum has outperformed both gold and silver on a percentage basis since January, while palladium — after three brutal years of decline — has finally found a floor. Neither metal gets the retail attention it deserves, which is exactly why they're worth a closer look.</p>
+
+      <h3>Platinum's Structural Deficit</h3>
+      <p>Platinum has now run a supply deficit for several consecutive years. Mine output from South Africa, which produces roughly 70% of global supply, has struggled with aging infrastructure, power disruptions, and years of underinvestment following the metal's decade-long price slump. At the same time, demand has broadened well beyond its traditional home in autocatalysts.</p>
+      <ul>
+        <li><strong>Jewelry demand is rising</strong> — particularly in China, where platinum jewelry has gained share as a lower-cost alternative to gold at elevated prices.</li>
+        <li><strong>Hydrogen economy demand</strong> — platinum is a key catalyst in hydrogen fuel cells and electrolyzers. This remains a small slice of total demand today, but it's a genuine long-term growth vector as hydrogen infrastructure scales.</li>
+        <li><strong>Investment demand</strong> — platinum-backed ETF holdings have grown as investors rotate into a metal that remains cheap relative to gold on a historical basis.</li>
+      </ul>
+
+      <div class="article-callout">
+        The platinum-to-gold ratio has spent most of the last decade below 1:1 — historically unusual, since platinum is rarer than gold and traditionally traded at a premium to it. A sustained supply deficit combined with this ratio normalizing is the core bull case for platinum right now.
+      </div>
+
+      <h3>Palladium: Past the Worst of It</h3>
+      <p>Palladium tells a different story. After spiking to record highs in 2021 on tight autocatalyst demand, palladium has fallen sharply as automakers shifted catalytic converter formulations back toward platinum (which is cheaper) and as electric vehicle adoption reduced total catalytic converter demand growth. The metal is almost entirely dependent on the internal combustion and hybrid vehicle market, which makes it more exposed to the EV transition than any other precious metal.</p>
+      <p>That said, 2026 has seen palladium prices stabilize rather than continue falling. A few factors are behind the floor:</p>
+      <ul>
+        <li><strong>Slower EV adoption than forecast</strong> in several major markets has kept hybrid and ICE vehicle production — and palladium demand — higher than bearish forecasts assumed a few years ago.</li>
+        <li><strong>Russian supply risk</strong> remains a persistent wildcard, since Russia supplies a significant share of global mined palladium alongside South Africa.</li>
+        <li><strong>Recycling supply has plateaued</strong>, as the wave of scrapped catalytic converters from the last vehicle cycle has largely worked through the system.</li>
+      </ul>
+
+      <h3>Should You Buy Either?</h3>
+      <p>Both metals are more industrial and more volatile than gold or silver, and the retail bullion market for both is thinner — expect wider bid-ask spreads and higher premiums, particularly for palladium. They are not a substitute for a core gold or silver position; they're a satellite allocation for investors who understand the industrial demand story and are comfortable with the added volatility.</p>
+      <ul>
+        <li><strong>Platinum</strong> has the cleaner long-term case right now: a genuine multi-year supply deficit, diversifying demand, and a historically stretched valuation versus gold.</li>
+        <li><strong>Palladium</strong> is more of a stabilization-and-hold story than a growth story today — reasonable for investors who already understand the auto-catalyst cycle, less compelling as a first purchase.</li>
+      </ul>
+      <p>For most investors, a small platinum allocation (5–10% of a metals position) is the more defensible way to diversify beyond gold and silver in 2026.</p>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Shop platinum &amp; palladium →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/platinum/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Platinum at JM Bullion</a>
+        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/palladium?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Palladium at APMEX</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 5: STORAGE & INSURANCE ══ -->
+<div class="modal-overlay" id="modal-article-storage">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-storage')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="graduation-cap" style="width:10px;height:10px;vertical-align:middle"></i> Education</div>
+    <div class="modal-title">How to Store and Insure Your Physical Gold and Silver</div>
+    <div class="article-modal-meta">
+      <span>7 min read</span>
+      <span>·</span>
+      <span>August 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>Buying gold and silver is the straightforward part. Keeping it safe — and making sure you'd actually be made whole if something went wrong — is where most new buyers under-plan. Here's a practical rundown of the three main storage paths and how insurance actually works for each.</p>
+
+      <h3>Option 1: Home Storage</h3>
+      <p>The most common choice for smaller positions, home storage means the metal is instantly accessible and costs nothing in ongoing fees. It also carries the most risk you have to manage yourself.</p>
+      <ul>
+        <li><strong>Get a real safe</strong> — a fireproof document box is not a security safe. Look for a TL-rated (tool-resistant) or UL-rated burglary safe, bolted to the floor or a structural wall. Weight and anchoring matter more than the lock itself.</li>
+        <li><strong>Don't tell anyone</strong> — the single biggest risk to home-stored metal is someone knowing it exists. Discretion matters more than most security hardware.</li>
+        <li><strong>Split your holdings</strong> — some investors deliberately spread metal across more than one location so a single event (fire, burglary) can't wipe out the entire position.</li>
+      </ul>
+
+      <div class="article-callout">
+        <strong>Insurance note:</strong> Most standard homeowners or renters policies cap coverage for precious metals and jewelry at $1,000–$2,500 total, regardless of what you actually own. If you're holding a meaningful position at home, a scheduled personal property endorsement (a rider that specifically lists and insures your metal) is close to mandatory, not optional.
+      </div>
+
+      <h3>Option 2: Bank Safe Deposit Box</h3>
+      <p>A safe deposit box adds real physical security for a modest annual fee (typically $50–$300 depending on box size and location), but it comes with two often-overlooked catches.</p>
+      <ul>
+        <li><strong>Banks generally do not insure box contents.</strong> The box itself is secure, but the bank's insurance almost never covers what's inside it — you're still responsible for insuring the metal yourself, usually through a separate policy or rider.</li>
+        <li><strong>Access is limited to banking hours</strong>, and boxes can be legally sealed in specific circumstances (such as after the box holder's death, pending estate processes), which matters for succession planning.</li>
+      </ul>
+
+      <h3>Option 3: Third-Party Depository Storage</h3>
+      <p>For larger positions, professional depositories (Brink's, Delaware Depository, IDS, and others) offer allocated or segregated storage with full insurance built into the fee, typically running 0.5–1% of the metal's value annually.</p>
+      <ul>
+        <li><strong>Allocated storage</strong> means your specific bars or coins are stored separately and identified as yours — you own that exact metal, not a claim on a shared pool.</li>
+        <li><strong>Segregated vs. non-segregated</strong> — segregated storage keeps your holdings physically separate from other clients' metal in the same vault; non-segregated (or "pooled") storage is cheaper but means you own a fractional claim rather than specific, identifiable bars.</li>
+        <li><strong>This is also the required structure for IRA-held metal</strong> — the IRS mandates an approved depository for any precious metals held inside a self-directed IRA; home storage is not permitted for IRA metal despite what some "home storage IRA" marketing implies.</li>
+      </ul>
+
+      <h3>Choosing the Right Setup</h3>
+      <p>As a rough framework:</p>
+      <ul>
+        <li><strong>Under $10,000</strong> — a quality home safe with a scheduled insurance rider is usually sufficient and keeps the metal fully accessible.</li>
+        <li><strong>$10,000–$50,000</strong> — a bank safe deposit box plus a separate insurance policy, or a mix of home and box storage, balances cost and security reasonably well.</li>
+        <li><strong>$50,000+</strong> — professional depository storage starts to make sense, particularly for retirement account holdings where it's required by law anyway.</li>
+      </ul>
+      <p>Whatever you choose, keep independent documentation — photos, serial numbers on bars, purchase receipts, and appraisals — stored separately from the metal itself. If you ever need to file an insurance claim, this documentation is what determines whether it gets paid quickly or gets disputed.</p>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Buy metal to store →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
+        <a class="aff-btn aff-btn-sd" href="https://www.sdbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> SD Bullion</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE MODAL 6: 1OZ VS 10OZ GOLD BARS ══ -->
+<div class="modal-overlay" id="modal-article-barsize">
+  <div class="modal-box" style="max-width:780px">
+    <button class="modal-close" onclick="closeModal('article-barsize')">✕</button>
+    <div class="article-modal-kicker"><i data-lucide="scale" style="width:10px;height:10px;vertical-align:middle"></i> Buyer's Guide</div>
+    <div class="modal-title">1 oz vs 10 oz Gold Bars — Which Size Actually Saves You Money?</div>
+    <div class="article-modal-meta">
+      <span>5 min read</span>
+      <span>·</span>
+      <span>September 2026</span>
+      <span>·</span>
+      <span>By the KaratClock Team</span>
+    </div>
+    <div class="article-body">
+      <p>Every gold buyer eventually runs into the same tradeoff: bigger bars cost less per ounce, but smaller units are easier to sell in pieces. With gold trading at levels where a single ounce represents a meaningful sum of money, the size decision matters more than it used to.</p>
+
+      <h3>The Premium Math</h3>
+      <p>Premiums over spot shrink as bar size grows, because fixed minting and fabrication costs get spread across more ounces of metal:</p>
+      <ul>
+        <li><strong>1 oz gold bars</strong> — typically 2.5–3.5% over spot</li>
+        <li><strong>5 oz gold bars</strong> — typically 2–3% over spot</li>
+        <li><strong>10 oz gold bars</strong> — typically 1–2% over spot</li>
+        <li><strong>1 kilo (32.15 oz) bars</strong> — can fall below 1% over spot at the best dealers</li>
+      </ul>
+      <div class="article-callout">
+        On a $3,300/oz gold price, the difference between a 3% premium (1 oz bar) and a 1.5% premium (10 oz bar) works out to roughly $50 per ounce. Buy 10 ounces at the larger size and that's $500 saved on the same total gold weight — real money, for identical exposure to the metal.
+      </div>
+
+      <h3>Where the 10 oz Bar Falls Short</h3>
+      <p>The savings are real, but they come with tradeoffs that matter depending on why you're buying:</p>
+      <ul>
+        <li><strong>You can't sell part of it.</strong> If you own one 10 oz bar and need to raise cash equal to 2 ounces of gold, you have to sell the entire bar — there's no partial liquidation. Ten separate 1 oz coins let you sell exactly as much as you need.</li>
+        <li><strong>Resale requires more trust.</strong> Large bars are more frequently targeted for counterfeiting because the payoff is higher. Reputable brands (PAMP Suisse, Valcambi, Credit Suisse, Royal Canadian Mint) with assay certificates and tamper-evident packaging sell far more easily than obscure or unsealed bars.</li>
+        <li><strong>Divisibility matters in emergencies.</strong> If precious metals are part of a true emergency-liquidity plan, smaller denominations are more practical to use as intended.</li>
+      </ul>
+
+      <h3>Where 1 oz Coins Still Win</h3>
+      <p>Government-minted 1 oz coins (Eagles, Maple Leafs, Krugerrands) carry a higher premium than bars of any size, but they offer things bars don't:</p>
+      <ul>
+        <li><strong>Universal recognition</strong> — any dealer, anywhere, will buy a Gold Eagle or Maple Leaf without hesitation. Generic bars sometimes face more scrutiny.</li>
+        <li><strong>Legal tender status</strong> — largely symbolic, but it does affect how some coins are treated for import/export and reporting purposes in certain jurisdictions.</li>
+        <li><strong>Easier partial sales</strong> — same logic as smaller bars: more units means more flexibility.</li>
+      </ul>
+
+      <h3>A Practical Approach</h3>
+      <p>Most experienced buyers don't pick one size exclusively — they ladder across sizes based on purpose:</p>
+      <ul>
+        <li>Hold the <strong>bulk of a long-term position in larger bars</strong> (10 oz or 1 kilo) to minimize total premium paid.</li>
+        <li>Keep a <strong>portion in 1 oz government coins</strong> for liquidity, recognizability, and the ability to sell in small increments if needed.</li>
+        <li>Avoid fractional bars and coins below 1/4 oz for pure investment purposes — the premiums (often 8–15%+) rarely justify the size unless you have a specific gifting or collecting reason.</li>
+      </ul>
+
+      <div class="article-affiliate-strip">
+        <div class="affiliate-strip-label">Compare bar prices →</div>
+        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at JM Bullion</a>
+        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/gold-bars?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at APMEX</a>
+        <a class="aff-btn aff-btn-sd" href="https://www.sdbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at SD Bullion</a>
       </div>
     </div>
   </div>
