@@ -1082,6 +1082,14 @@
 
   .footer-link:hover { color: var(--gold); }
   .footer-sep { opacity: 0.4; }
+  .footer-social { display: flex; justify-content: center; gap: 14px; }
+  .footer-social a {
+    display: inline-flex;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--gold); }
+  .footer-social svg { width: 18px; height: 18px; }
   .footer-sources a { color: var(--gold); text-decoration: none; }
   .disclaimer {
     max-width: 46ch;
@@ -1952,6 +1960,14 @@
 <footer>
   <div class="footer-inner">
     <img src="kc_transaparent.png?v=4" alt="KaratClock" class="footer-logo">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/karatclock/" target="_blank" rel="noopener" aria-label="KaratClock on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://x.com/karatclock" target="_blank" rel="noopener" aria-label="KaratClock on X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 3h3.06l-6.69 7.65L22.5 21h-6.17l-4.83-6.31L5.96 21H2.9l7.16-8.19L2 3h6.33l4.37 5.77L18.24 3Zm-1.07 16.17h1.7L7.9 4.74H6.08l11.09 14.43Z"/></svg>
+      </a>
+    </div>
     <div class="footer-links">
       <button class="footer-link" onclick="openModal('about')">About KaratClock</button>
       <span class="footer-sep">·</span>
