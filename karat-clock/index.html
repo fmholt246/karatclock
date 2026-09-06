@@ -557,6 +557,100 @@
   .weight-pill:hover { border-color: var(--gold); color: var(--ink); }
   .weight-pill.active { background: var(--ink); border-color: var(--ink); color: var(--linen); }
 
+  /* ── HISTORY CHARTS ── */
+  .history-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+  }
+
+  .history-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .history-metal-card {
+    background: var(--linen);
+    border: 1px solid var(--border-light);
+    border-top: 3px solid var(--metal-color, var(--gold));
+    padding: 18px 20px 16px;
+  }
+
+  .history-metal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .history-metal-name {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .history-metal-swatch { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  .history-metal-figures { text-align: right; }
+
+  .history-metal-price {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .history-metal-change {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    margin-top: 2px;
+  }
+
+  .history-chart-wrap {
+    width: 100%;
+    height: 130px;
+    position: relative;
+  }
+
+  .history-chart-wrap svg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+  .history-price-axis {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--faint);
+    margin-bottom: 3px;
+  }
+
+  .history-date-axis {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .history-status {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-family: 'Archivo', sans-serif;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  @media (max-width: 768px) {
+    .history-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── SUMMARY BAR ── */
   .summary-bar {
     background: var(--linen);
@@ -1344,7 +1438,7 @@
   <div class="gold-rule"></div>
   <div class="nav-inner">
     <div class="nav-tab active" data-tab="spot"    onclick="switchTab('spot',this)">Spot Prices</div>
-    <div class="nav-tab"        data-tab="compare" onclick="switchTab('compare',this)">Product Comparator</div>
+    <div class="nav-tab"        data-tab="compare" onclick="switchTab('compare',this)">Product Comparison</div>
     <div class="nav-tab"        data-tab="global"  onclick="switchTab('global',this)">Global Markets</div>
     <div class="nav-tab"        data-tab="buy"     onclick="switchTab('buy',this)">Where to Buy</div>
     <div class="nav-tab"        data-tab="learn"   onclick="switchTab('learn',this)">Learn</div>
@@ -1370,6 +1464,24 @@
       <div class="section-head-rule"></div>
     </div>
     <div class="cards-grid" id="cardsGrid"></div>
+
+    <div class="section-head">
+      <span class="section-head-title">Historical Performance</span>
+      <div class="section-head-rule"></div>
+    </div>
+    <div class="history-controls">
+      <div class="weight-pills" id="historyRangePills">
+        <div class="weight-pill active" data-range="1d">Day</div>
+        <div class="weight-pill" data-range="1w">Week</div>
+        <div class="weight-pill" data-range="1mo">Month</div>
+        <div class="weight-pill" data-range="3mo">Quarter</div>
+        <div class="weight-pill" data-range="1y">Year</div>
+        <div class="weight-pill" data-range="5y">5 Years</div>
+      </div>
+    </div>
+    <div class="history-grid" id="historyGrid">
+      <div class="history-status">Loading charts…</div>
+    </div>
 
     <div class="section-head">
       <span class="section-head-title">Full Market Overview</span>
@@ -1706,7 +1818,7 @@
       <p>Silver's high premiums surprise many new buyers. Because silver is far cheaper per ounce than gold, the fixed costs of minting and distribution represent a much larger percentage of the coin's value. A $0.50 minting cost on a $3,200 gold coin is negligible. On a $33 silver coin, it's significant.</p>
 
       <h3>Shopping the Best Premium</h3>
-      <p>The same coin can trade at different premiums across retailers on the same day. Shopping around — or using KaratClock's Product Comparator — can save you real money, especially on larger purchases. Across JM Bullion, APMEX, and SD Bullion, premium differences of 0.5–2% on a $3,200 gold coin translate to $16–$64 per ounce.</p>
+      <p>The same coin can trade at different premiums across retailers on the same day. Shopping around — or using KaratClock's Product Comparison — can save you real money, especially on larger purchases. Across JM Bullion, APMEX, and SD Bullion, premium differences of 0.5–2% on a $3,200 gold coin translate to $16–$64 per ounce.</p>
 
       <div class="article-callout">
         <strong>Pro tip:</strong> Premiums tend to compress when you buy larger quantities. Buying a 10-coin roll or a 10 oz bar will almost always deliver a lower per-ounce cost than buying single 1 oz pieces.
@@ -2228,6 +2340,102 @@ function buildTable(){
   }).join('');
 }
 
+const historyCache = {};
+let currentHistoryRange = '1d';
+
+async function loadHistory(range){
+  if(historyCache[range] && Date.now()-historyCache[range].at < 4*60*1000) return historyCache[range].data;
+  const res  = await fetch(`/.netlify/functions/history?range=${range}`);
+  const data = await res.json();
+  historyCache[range] = { at:Date.now(), data };
+  return data;
+}
+
+function historyDateFmt(unixSeconds, range){
+  const d = new Date(unixSeconds*1000);
+  if(range==='1d')            return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  if(range==='1y'||range==='5y') return d.toLocaleDateString('en-US',{month:'short',year:'numeric'});
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+
+function buildMetalCard(m, pts, range){
+  const color = live[m].color;
+  const head  = `<div class="history-metal-head">
+      <div class="history-metal-name"><span class="history-metal-swatch" style="background:${color}"></span>${MNAMES[m]}</div>`;
+
+  if(pts.length < 2){
+    return `<div class="history-metal-card" style="--metal-color:${color}">
+      ${head}</div>
+      <div class="history-status">No data available.</div>
+    </div>`;
+  }
+
+  const prices = pts.map(p=>p.c);
+  const minP = Math.min(...prices), maxP = Math.max(...prices);
+  const spread = (maxP-minP) || 1;
+  const first = prices[0], last = prices[prices.length-1];
+  const chg  = last-first, pct = first ? (chg/first)*100 : 0;
+  const up   = chg >= 0;
+
+  const W=400, H=130, padY=6;
+  const yFor  = v => H-padY - ((v-minP)/spread)*(H-2*padY);
+  const stepX = W/(pts.length-1);
+  const linePts = prices.map((v,i)=>`${(i*stepX).toFixed(2)},${yFor(v).toFixed(2)}`).join(' ');
+  const areaPts = `0,${H} ${linePts} ${W},${H}`;
+
+  const startLabel = historyDateFmt(pts[0].t, range);
+  const endLabel   = historyDateFmt(pts[pts.length-1].t, range);
+
+  return `<div class="history-metal-card" style="--metal-color:${color}">
+    ${head}
+      <div class="history-metal-figures">
+        <div class="history-metal-price">$${fmt(last)}</div>
+        <span class="history-metal-change" style="color:${up?'var(--gold)':'#B3001B'}">${up?'▲':'▼'} ${up?'+':''}${fmt(chg)} (${up?'+':''}${fmt(pct)}%)</span>
+      </div>
+    </div>
+    <div class="history-price-axis"><span>High $${fmt(maxP)}</span><span>Low $${fmt(minP)}</span></div>
+    <div class="history-chart-wrap">
+      <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+        <polygon points="${areaPts}" fill="${color}" opacity="0.08"/>
+        <polyline fill="none" stroke="${color}" stroke-width="2" points="${linePts}"/>
+      </svg>
+    </div>
+    <div class="history-date-axis"><span>${startLabel}</span><span>${endLabel}</span></div>
+  </div>`;
+}
+
+function renderHistoryGrid(data){
+  const grid   = document.getElementById('historyGrid');
+  const metals = ['gold','silver','platinum','palladium'];
+  const range  = data.range || currentHistoryRange;
+  const anyData = metals.some(m => ((data.series && data.series[m]) || []).length >= 2);
+
+  if(!anyData){
+    grid.innerHTML = '<div class="history-status">Historical data isn\'t available right now.</div>';
+    return;
+  }
+
+  grid.innerHTML = metals.map(m => buildMetalCard(m, (data.series && data.series[m]) || [], range)).join('');
+}
+
+async function renderHistory(range){
+  currentHistoryRange = range;
+  document.querySelectorAll('#historyRangePills .weight-pill').forEach(p=>{
+    p.classList.toggle('active', p.dataset.range === range);
+  });
+  document.getElementById('historyGrid').innerHTML = '<div class="history-status">Loading charts…</div>';
+  try {
+    const data = await loadHistory(range);
+    renderHistoryGrid(data);
+  } catch(e){
+    document.getElementById('historyGrid').innerHTML = '<div class="history-status">Charts unavailable right now.</div>';
+  }
+}
+
+document.querySelectorAll('#historyRangePills .weight-pill').forEach(p=>{
+  p.addEventListener('click', ()=> renderHistory(p.dataset.range));
+});
+
 function updateTs(){
   const n = new Date();
   document.getElementById('lastUpdated').textContent =
@@ -2329,6 +2537,7 @@ if(!localStorage.getItem('kc_cookie_consent')){
 
 render();
 setInterval(render, 60000);
+renderHistory(currentHistoryRange);
 </script>
 </body>
 </html>
