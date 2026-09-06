@@ -787,11 +787,6 @@
 
   .retailer-name { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--muted); }
 
-  .retailer-dot { width: 5px; height: 5px; border-radius: 50%; }
-  .dot-jm    { background: #3D5A80; }
-  .dot-apmex { background: #8F5E3C; }
-  .dot-sd    { background: #3F6B54; }
-
   .retailer-price-group { display: flex; align-items: center; gap: 5px; }
 
   .retailer-price { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--ink); }
@@ -813,12 +808,21 @@
     text-transform: uppercase;
   }
 
+  .buy-btns-label {
+    padding: 10px 18px 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.54rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-top: 1px solid var(--border-light);
+  }
+
   .buy-btns {
-    padding: 10px 18px 14px;
+    padding: 8px 18px 14px;
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    border-top: 1px solid var(--border-light);
   }
 
   .buy-btn {
@@ -840,29 +844,8 @@
     gap: 6px;
   }
 
-  /* retailer identity survives as a dot rather than a full-bleed brand colour */
-  .buy-btn::before {
-    content: '';
-    width: 5px; height: 5px; border-radius: 50%;
-    background: var(--rc, var(--muted));
-    flex-shrink: 0;
-  }
-
   .buy-btn:hover { border-color: var(--ink); color: var(--ink); }
   .buy-btn .lucide { width: 10px; height: 10px; }
-  .btn-jm    { --rc: #3D5A80; }
-  .btn-apmex { --rc: #8F5E3C; }
-  .btn-sd    { --rc: #3F6B54; }
-
-  /* MINT — the only filled button on the card is the cheapest retailer */
-  .buy-btn.is-best {
-    border-color: var(--mint-deep);
-    color: var(--mint-deep);
-    background: var(--mint-wash);
-  }
-
-  .buy-btn.is-best::before { background: var(--mint-deep); }
-  .buy-btn.is-best:hover { background: rgba(0,192,139,0.16); border-color: var(--mint-deep); color: var(--mint-deep); }
 
   .no-results {
     text-align: center;
@@ -1376,18 +1359,20 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--muted);
-    flex: 1;
-    min-width: 120px;
+    flex: 1 1 100%;
   }
 
   .aff-btn {
+    flex: 0 1 auto;
+    min-width: 70px;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    justify-content: center;
+    gap: 6px;
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
-    font-size: 0.68rem;
-    padding: 8px 14px;
+    font-size: 0.66rem;
+    padding: 8px;
     text-decoration: none;
     background: var(--linen);
     border: 1px solid var(--border);
@@ -1395,17 +1380,7 @@
     transition: border-color 0.16s, color 0.16s;
   }
 
-  .aff-btn::before {
-    content: '';
-    width: 5px; height: 5px; border-radius: 50%;
-    background: var(--rc, var(--muted));
-    flex-shrink: 0;
-  }
-
   .aff-btn:hover { border-color: var(--ink); color: var(--ink); }
-  .aff-btn-jm    { --rc: #3D5A80; }
-  .aff-btn-apmex { --rc: #8F5E3C; }
-  .aff-btn-sd    { --rc: #3F6B54; }
 
   @media (max-width: 768px) {
     .learn-hero { padding: 44px 18px 32px; }
@@ -1530,7 +1505,6 @@
           <option value="all">All Types</option>
           <option value="coin">Coins</option>
           <option value="bar">Bars</option>
-          <option value="round">Rounds</option>
         </select>
       </div>
       <div class="filter-group">
@@ -1875,10 +1849,10 @@
       <p>Spot price tells you what the metal is worth. The premium tells you what the product costs to hold in your hand. Both numbers matter. A great metal at a terrible premium is still a bad deal — and vice versa. Always look at the total all-in cost before you buy.</p>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Compare premiums and buy now →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
-        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> APMEX</a>
-        <a class="aff-btn aff-btn-sd" href="https://www.sdbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> SD Bullion</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
+        <a class="aff-btn" href="https://www.apmex.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> APMEX</a>
+        <a class="aff-btn" href="https://www.sdbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-premium" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> SD Bullion</a>
       </div>
     </div>
   </div>
@@ -1942,9 +1916,9 @@
       <p>Neither metal pays dividends. Neither has counterparty risk. Both are real, tangible stores of value in a world where paper promises are increasingly questioned.</p>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Buy gold &amp; silver now →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold at JM Bullion</a>
-        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/silver?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Silver at APMEX</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/gold/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold at JM Bullion</a>
+        <a class="aff-btn" href="https://www.apmex.com/silver?utm_source=karatclock&utm_medium=affiliate&utm_content=article-goldvsilver" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Silver at APMEX</a>
       </div>
     </div>
   </div>
@@ -2018,9 +1992,9 @@
       <p>Whatever you decide, comparing prices across retailers before you buy is always worth doing. On a $3,300 gold coin, a 1% premium difference is $33 per ounce — across a 10-coin position, that's $330 that stays in your pocket.</p>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Shop Eagles &amp; Maple Leafs →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/gold-coins/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at JM Bullion</a>
-        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/gold-coins?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at APMEX</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/gold/gold-coins/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at JM Bullion</a>
+        <a class="aff-btn" href="https://www.apmex.com/gold-coins?utm_source=karatclock&utm_medium=affiliate&utm_content=article-eaglevmaple" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Coins at APMEX</a>
       </div>
     </div>
   </div>
@@ -2072,9 +2046,9 @@
       <p>For most investors, a small platinum allocation (5–10% of a metals position) is the more defensible way to diversify beyond gold and silver in 2026.</p>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Shop platinum &amp; palladium →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/platinum/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Platinum at JM Bullion</a>
-        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/palladium?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Palladium at APMEX</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/platinum/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Platinum at JM Bullion</a>
+        <a class="aff-btn" href="https://www.apmex.com/palladium?utm_source=karatclock&utm_medium=affiliate&utm_content=article-platpall" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Palladium at APMEX</a>
       </div>
     </div>
   </div>
@@ -2133,9 +2107,9 @@
       <p>Whatever you choose, keep independent documentation — photos, serial numbers on bars, purchase receipts, and appraisals — stored separately from the metal itself. If you ever need to file an insurance claim, this documentation is what determines whether it gets paid quickly or gets disputed.</p>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Buy metal to store →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
-        <a class="aff-btn aff-btn-sd" href="https://www.sdbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> SD Bullion</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> JM Bullion</a>
+        <a class="aff-btn" href="https://www.sdbullion.com/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-storage" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> SD Bullion</a>
       </div>
     </div>
   </div>
@@ -2194,10 +2168,10 @@
       </ul>
 
       <div class="article-affiliate-strip">
-        <div class="affiliate-strip-label">Compare bar prices →</div>
-        <a class="aff-btn aff-btn-jm" href="https://www.jmbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at JM Bullion</a>
-        <a class="aff-btn aff-btn-apmex" href="https://www.apmex.com/gold-bars?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at APMEX</a>
-        <a class="aff-btn aff-btn-sd" href="https://www.sdbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at SD Bullion</a>
+        <div class="affiliate-strip-label">Check availability:</div>
+        <a class="aff-btn" href="https://www.jmbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at JM Bullion</a>
+        <a class="aff-btn" href="https://www.apmex.com/gold-bars?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at APMEX</a>
+        <a class="aff-btn" href="https://www.sdbullion.com/gold/gold-bars/?utm_source=karatclock&utm_medium=affiliate&utm_content=article-barsize" target="_blank" rel="noopener"><i data-lucide="external-link" style="width:11px;height:11px"></i> Gold Bars at SD Bullion</a>
       </div>
     </div>
   </div>
@@ -2350,9 +2324,9 @@ const WEIGHTS = {
 };
 
 const RETAILERS = [
-  { id:'jm',    label:'JM Bullion', dot:'dot-jm',    btn:'btn-jm',    base:'https://www.jmbullion.com/search/?q={Q}&utm_source=karatclock&utm_medium=affiliate' },
-  { id:'apmex', label:'APMEX',      dot:'dot-apmex', btn:'btn-apmex', base:'https://www.apmex.com/search#w={Q}&utm_source=karatclock&utm_medium=affiliate'      },
-  { id:'sd',    label:'SD Bullion', dot:'dot-sd',    btn:'btn-sd',    base:'https://www.sdbullion.com/search?q={Q}&utm_source=karatclock&utm_medium=affiliate'    }
+  { id:'jm',    label:'JM Bullion', base:'https://www.jmbullion.com/search/?q={Q}&utm_source=karatclock&utm_medium=affiliate' },
+  { id:'apmex', label:'APMEX',      base:'https://www.apmex.com/search#w={Q}&utm_source=karatclock&utm_medium=affiliate'      },
+  { id:'sd',    label:'SD Bullion', base:'https://www.sdbullion.com/search?q={Q}&utm_source=karatclock&utm_medium=affiliate'    }
 ];
 
 const PRODUCTS = [
@@ -2418,7 +2392,11 @@ const PRODUCTS = [
       '1g': { jm:'https://www.jmbullion.com/1-gram-credit-suisse-liberty-platinum-bar/?utm_source=karatclock&utm_medium=affiliate', apmex:'https://www.apmex.com/product/1116/1-gram-platinum-bar-credit-suisse-in-assay?utm_source=karatclock&utm_medium=affiliate', sd:'https://sdbullion.com/1-gram-pamp-suisse-platinum-bar?utm_source=karatclock&utm_medium=affiliate' },
       'one':{ jm:'https://www.jmbullion.com/1-oz-credit-suisse-platinum-bar/?utm_source=karatclock&utm_medium=affiliate',           apmex:'https://www.apmex.com/product/49174/1-oz-platinum-bar-credit-suisse-9995-fine-w-assay?utm_source=karatclock&utm_medium=affiliate',  sd:'https://sdbullion.com/1-oz-credit-suisse-platinum-bar?utm_source=karatclock&utm_medium=affiliate' },
       'ten':{ jm:'https://www.jmbullion.com/10-oz-credit-suisse-platinum-bar/?utm_source=karatclock&utm_medium=affiliate',          apmex:'https://www.apmex.com/product/88221/10-oz-platinum-bar-credit-suisse-9995-fine-w-assay?utm_source=karatclock&utm_medium=affiliate', sd:'https://sdbullion.com/10-oz-credit-suisse-platinum-bar?utm_source=karatclock&utm_medium=affiliate' }
-    }}
+    }},
+  { id:'palml', name:'Canadian Palladium Maple Leaf', metal:'palladium', type:'coin', sym:'Pd',
+    p:{ '1g':null, 'tenth':null, 'quarter':null, 'one':[6.5,7.4,8.2], 'ten':null } },
+  { id:'palbar', name:'Palladium Bar (Generic .9995)', metal:'palladium', type:'bar',   sym:'Pd',
+    p:{ '1g':null, 'tenth':null, 'quarter':null, 'one':[4.2,5.0,5.8], 'ten':null } }
 ];
 
 let activeWeight = 'all';
@@ -2476,7 +2454,7 @@ function renderCompare(){
     const rows = prices.map(({r,price,prem})=>{
       const best = Math.abs(price-minP)<0.01;
       return `<div class="price-row">
-        <div class="retailer-name"><div class="retailer-dot ${r.dot}"></div>${r.label}</div>
+        <div class="retailer-name">${r.label}</div>
         <div class="retailer-price-group">
           <span class="retailer-price">$${fmt(price)}</span>
           <span class="premium-tag ${pcls(prem)}">+${prem}%</span>
@@ -2488,8 +2466,7 @@ function renderCompare(){
     const btns = prices.map(({r,price})=>{
       const directUrl = prod.urls?.[wk]?.[r.id];
       const url = directUrl || r.base.replace('{Q}', encodeURIComponent(prod.name+' '+wl));
-      const best = Math.abs(price-minP)<0.01;
-      return `<a class="buy-btn ${r.btn}${best?' is-best':''}" href="${url}" target="_blank" rel="noopener">${best?'★ ':''}${r.label}</a>`;
+      return `<a class="buy-btn" href="${url}" target="_blank" rel="noopener">${r.label}</a>`;
     }).join('');
 
     return `<div class="product-card" style="animation-delay:${idx*0.025}s">
@@ -2506,6 +2483,7 @@ function renderCompare(){
         <div class="spot-val">$${fmt(spotVal)} <span style="color:var(--faint);font-size:0.6rem">${live[prod.metal].sym}</span></div>
       </div>
       <div class="price-rows">${rows}</div>
+      <div class="buy-btns-label">Check availability:</div>
       <div class="buy-btns">${btns}</div>
     </div>`;
   }).join('');
