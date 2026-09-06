@@ -298,28 +298,11 @@
   }
 
   /* ── SECTION HEADERS ── */
-  .page-section { counter-reset: sec; }
-
   .section-head {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
-  }
-
-  /* MINT — section numbers, generated so they stay in order per tab */
-  .section-head::before {
-    counter-increment: sec;
-    content: counter(sec, decimal-leading-zero);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    color: var(--mint-deep);
-    background: var(--mint-wash);
-    border: 1px solid var(--mint-line);
-    padding: 3px 8px;
-    border-radius: 2px;
-    flex-shrink: 0;
   }
 
   .section-head-title {
@@ -1483,7 +1466,7 @@
       <div class="history-status">Loading charts…</div>
     </div>
 
-    <div class="section-head">
+    <div class="section-head" style="margin-top:40px">
       <span class="section-head-title">Full Market Overview</span>
       <div class="section-head-rule"></div>
     </div>
